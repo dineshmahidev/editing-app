@@ -1,25 +1,58 @@
 {
   "expo": {
-    "name": "app-src",
-    "slug": "app-src",
+    "name": "Vixel Edit",
+    "slug": "vixel-edit",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "scheme": "vixel",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0d0d0f"
+    },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.vixel.vixiledit"
     },
     "android": {
+      "package": "com.vixel.vixiledit",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#0d0d0f",
         "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Vixel Edit needs access to your media library to import videos, images and audio for editing.",
+          "cameraPermission": "Vixel Edit uses the camera for capturing quick videos, images and audio."
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Vixel Edit uses the media library to save exported videos and import media.",
+          "savePhotosPermission": "Vixel Edit saves exported videos to your gallery.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ],
+      "expo-sqlite",
+      "expo-font",
+      "expo-video"
+    ],
+    "experiments": {
+      "typedRoutes": true
     }
   }
 }
