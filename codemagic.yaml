@@ -6,7 +6,7 @@ workflows:
   vixel-debug-android:
     name: Vixel Edit - Android Debug APK
     max_build_duration: 120
-    instance_type: macos_m2
+    instance_type: mac_mini_m2
     environment:
       node: v22.13.1
       vars:
